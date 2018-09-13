@@ -1,6 +1,13 @@
+'''
+Created on Sep 12, 2018
+
+@author: edgarcolin
+'''
 import sys
 from PyQt5.QtWidgets import QDialog, QApplication
 from demoLineEdit import *
+from PyQt5.Qt import QDialog
+
 class MyForm(QDialog):
     def __init__(self):
         super().__init__()
@@ -9,10 +16,14 @@ class MyForm(QDialog):
         self.ui.ButtonClickMe.clicked.connect(self.dispmessage)
         self.show()
     def dispmessage(self):
-        self.ui.label.setText("Hello " 
-        +self.ui.lineEditName.text())
-if __name__=="__main__":
+        self.ui.labelResponse.setText("Hello "
+        + self.ui.lineEditName.text())
+        
+if __name__ =="__main__":
     app = QApplication(sys.argv)
     w = MyForm()
     w.show()
     sys.exit(app.exec_())
+        
+        
+    
